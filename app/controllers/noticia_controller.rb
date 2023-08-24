@@ -1,6 +1,7 @@
 class NoticiaController < ApplicationController
   before_action :set_noticium, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /noticia or /noticia.json
   def index
