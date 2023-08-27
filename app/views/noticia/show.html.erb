@@ -3,8 +3,20 @@
 <%= render @noticium %>
 
 <div>
-  <%= link_to "Edit this noticium", edit_noticium_path(@noticium) %> |
-  <%= link_to "Back to noticia", noticia_path %>
+  <% if can? :update, @noticium %>
+  <%= button_to "Edit this noticium", edit_noticium_path(@noticium) %>
+  <% end %>
 
-  <%= button_to "Destroy this noticium", @noticium, method: :delete %>
+
+
+
+
+  <%= button_to "Back to noticia", noticia_path %>
+
+
+
+  <% if can? :destroy, @noticium %>
+  <%= button_to "Eliminar", @noticium, method: :delete, data: { confirm: "¿Estás seguro?" }, class: "btn btn-danger" %>
+<% end %>
+
 </div>
