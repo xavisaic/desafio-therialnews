@@ -4,14 +4,14 @@
 
 <div>
   <% if can? :update, @noticium %>
-  <%= button_to "Edit this noticium", edit_noticium_path(@noticium) %>
+  <%= button_to "Edit this noticium", edit_noticium_path(@noticium) %> |
   <% end %>
 
 
 
 
 
-  <%= button_to "Back to noticia", noticia_path %>
+  <%= link_to "Back to noticia", noticia_path %>
 
 
 
